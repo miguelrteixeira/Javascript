@@ -1,0 +1,57 @@
+@CHARSET "ISO-8859-1";
+body {
+	background-color: #FFFFFF;
+	width: 70%;
+	margin: 0 auto;
+}
+
+header {
+	border: 2px solid #800000;
+	border-radius: 10px;
+	margin-top: .5em;
+	background-image: -moz-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	background-image: -webkit-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	background-image: -o-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	background-image: -ie-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	background-image: linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+}
+header h1 {
+	padding: .25em 0 0 .15em;
+}
+header h2 {
+	padding: .15em 0 0 .15em;
+}
+
+section {
+	clear: both;
+	border: 2px solid #800000;
+	border-radius: 10px;
+	background-color: white;
+	margin-top: .25em;
+	padding: 1em 0 0.25em 1em;
+}
+section h1 {
+	margin: .5em;
+	color: #800000;
+	border-bottom: 2px solid #800000;
+}
+section h2 {
+	color: #800000;
+	text-indent: 1em;
+	font-size: 130%;
+}
+
+footer {
+	border: 2px solid #800000;
+	border-radius: 10px;
+	background-image: -moz-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	background-image: -webkit-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	background-image: -o-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	background-image: -ie-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	background-image: linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
+	color: #800000;
+	font-size: 75%;
+	text-align: center;
+	margin: .25em 0 0.5em 0;
+	padding: 0.25em 1em 0.25em 0;
+}
