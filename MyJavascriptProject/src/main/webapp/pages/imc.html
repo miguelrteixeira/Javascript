@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>IMC Page</title>
+		<title>BMI Page</title>
 		
 		<!-- Html 5 compatibility -->
 		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -21,16 +21,117 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<script src="js/bootstrap.min.js"></script>
 		
-		<!-- My Style -->
+		<!-- Customized CSS and JS -->
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript">
+			var $ = function(id) {
+				return document.getElementById(id);
+			}
+	
+			var calculateImc = function() {
+				var imc, imcLevel;
+				var height = $("height").value;
+				var weight = $("weight").value;
+				var isValid = true;
+				
+				if(height === "") {
+					$("height_error").firstChild.nodeValue = "Required!";
+					isValid = false;
+				} else if(isNaN(height) || height < 0) {
+					$("height_error").firstChild.nodeValue = "Please insert a numeric value greather than 0!";
+					isValid = false;
+				} else {
+					$("height_error").firstChild.nodeValue = "*";
+				}
+				
+				if(weight === "") {
+					$("weight_error").firstChild.nodeValue = "Required!";
+					isValid = false;
+				} else if(isNaN(weight) || weight < 0) {
+					$("weight_error").firstChild.nodeValue = "Please insert a numeric value greather than 0!";
+					isValid = false;
+				} else {
+					$("weight_error").firstChild.nodeValue = "*";
+				}
+				
+				if (isValid) {
+					var heigthMeters = height * 0.01;
+					imc = weight / (heigthMeters * heigthMeters);
+					
+					if(imc < 16) {
+						imcLevel = "Baixo Peso Muito Grave!";
+					} else if(imc >= 16 && imc < 17) {
+						imcLevel = "Baixo Peso Grave!";
+					} else if(imc >= 17 && imc < 18.5) {
+						imcLevel = "Baixo Peso!";
+					} else if(imc >= 18,5 && imc < 25) {
+						imcLevel = "Peso Normal!";
+					} else if(imc >= 25 && imc < 30) {
+						imcLevel = "Sobrepeso!";
+					} else if(imc >= 30 && imc < 35) {
+						imcLevel = "Obesidade Grau I!";
+					} else if(imc >= 35 && imc < 40) {
+						imcLevel = "Obesidade Grau II!";
+					} else if(imc >= 40) {
+						imcLevel = "Obesidade Mórbida!";
+					}
+					
+					$("imc").value = imc;
+					$("imc_level").firstChild.nodeValue = imcLevel.toString();
+					
+					/* alert("Altura: " + height + " (cm)." + 
+						  "\nPeso: " + weight + " (kg)." + 
+						  "\nIMC: " + imc + " (kg/m2)." + 
+						  "\n\nNível de IMC: " + imcLevel + "."); */
+				} else {
+					$("imc").value = "";
+					$("imc_level").firstChild.nodeValue = " ";
+				}
+			}
+	
+			window.onload = function() {
+				$("imc_result").onclick = calculateImc;
+				$("height").focus();
+			}
+		</script>
 	</head>
 	<body>
 		<header>
-			<h1>IMC Application</h1>
-			<h2>This page allows you to calculate your IMC!</h2>
+			<h1>BMI Application</h1>
+			<h2>This page allows you to calculate your BMI!</h2>
 		</header>
+		<menu>
+			<li>
+				<a href="*">IMC Page</a>
+			</li>
+			<li>
+				<a href="*">In Construction</a>
+			</li>
+			<li>
+				<a href="*">In Construction</a>
+			</li>
+			<li>
+				<a href="*">In Construction</a>
+			</li>			
+		</menu>
 		<section>
-			<p>Place main content here! Version 2!</p>
+			<form id="imc_form" name="imc_form" action="*" method="get">
+	            <label for="height">Height (cm):</label>
+                <input type="text" id="height" name="height">
+                <span id="height_error">*</span><br>
+
+    	        <label for="weight">Weight (kg):</label>
+                <input type="text" id="weight" name="weight">
+                <span id="weight_error">*</span><br>
+
+        	    <label>&nbsp;</label>
+            	<input type="button" id="imc_result" value="Calculate BMI"><br><br>
+            	
+            	<label for="imc">BMI (kg/m2):</label>
+                <input type="text" id="imc" name="imc" disabled>
+                <span id="imc_level"> </span><br>
+                
+        	</form>
 		</section>
 		<footer>
 			<p>&copy;

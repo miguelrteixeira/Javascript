@@ -22,12 +22,28 @@ header h2 {
 	padding: .15em 0 0 .15em;
 }
 
-section {
-	clear: both;
+menu {
+	width: 24%;
+	float: left;
 	border: 2px solid #800000;
 	border-radius: 10px;
 	background-color: white;
 	margin-top: .25em;
+	padding: 1em 0 0.25em 1em;
+}
+
+menu a {
+	color: #800000;
+	font-weight: bold;
+}
+
+section {
+	width: 75%;
+	float: right;
+	border: 2px solid #800000;
+	border-radius: 10px;
+	background-color: white;
+	margin: .25em 0 .15em 0;
 	padding: 1em 0 0.25em 1em;
 }
 section h1 {
@@ -40,8 +56,21 @@ section h2 {
 	text-indent: 1em;
 	font-size: 130%;
 }
-
+section label {
+	width: 15%;
+	text-align: right;
+	padding: 0 .25em .1em 0;
+}
+section input{
+	width: 15%;
+}
+section span {
+	color: red;
+	width: 5%;
+	font-size: small;
+}
 footer {
+	clear: both;
 	border: 2px solid #800000;
 	border-radius: 10px;
 	background-image: -moz-linear-gradient(30deg, #800000 0%, #fffded 25%, white 50%, #fffded 75%, #800000 100%);
