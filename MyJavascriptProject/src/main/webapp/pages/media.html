@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>App Media</title>
+		<script type="text/javascript">
+			var nota1, nota2, nota3, media;
+			var total = 0;
+			var isValid = true;
+			
+			nota1 = prompt("Insira a primeira nota:");
+			nota1 = parseFloat(nota1);
+			if (!isNaN(nota1)) {
+				total += nota1;
+			} else {
+				isValid = false;
+			}
+			
+			nota2 = prompt("Insira a segunda nota:");
+			nota2 = parseFloat(nota2);
+			if (!isNaN(nota2)) {
+				total += nota2;
+			} else {
+				isValid = false;
+			}
+			
+			nota3 = prompt("Insira a terceira nota:");
+			nota3 = parseFloat(nota3);
+			if (!isNaN(nota3)) {
+				total += nota3;
+			} else {
+				isValid = false;
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			if(isValid) {
+				media = parseInt(total/3);
+				document.writeln("<pre>Valor da primeira nota: " + nota1);
+				document.writeln("Valor da segunda nota: " + nota2);
+				document.writeln("Valor da terceira nota: " + nota3 + "<br>");
+				document.writeln("Valor da média: " + media);
+				document.writeln("<h1>Obrigado por usar a app Media!</h1></pre>")
+			} else {
+				document.writeln("<pre>Por favor use apenas valores numéricos, obrigado!");
+				document.writeln("<h1>Obrigado por usar a app Media!</h1></pre>")
+			}
+			
+		</script>
+	</body>
+</html>

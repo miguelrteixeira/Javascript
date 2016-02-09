@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>App Litros/Km</title>
+		
+		<script type="text/javascript">
+			var litros = prompt("Insira o número de litros:");
+			litros = parseInt(litros);
+			
+			var km = prompt("Insira o número de km's:");
+			km = parseInt(km);
+			
+			if(!isNaN(litros) && !isNaN(km)) {
+				var litrosPorKm =  litros / km;
+				/* alert("Você gastou " + litrosPorKm + " litros por km."); */
+			} else {
+				/* alert("Por favor insira apenas valores numéricos!"); */
+			}
+		</script>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			if(!isNaN(litros) && !isNaN(km)) {
+				document.writeln("<pre>Litros consumidos: " + litros);
+				document.writeln("Km's percorridos: " + km + "<br>");
+				document.writeln("Você gastou " + litrosPorKm + " litros por km.<br>");
+				document.writeln("<h1>Obrigado por usar a app Litros/Km!</h1></pre>")
+			} else {
+				document.writeln("<pre>Por favor insira apenas valores numéricos!");
+				document.writeln("<h1>Obrigado por usar a app Litros/Km!</h1></pre>")
+			}
+			
+		</script>
+	</body>
+</html>
