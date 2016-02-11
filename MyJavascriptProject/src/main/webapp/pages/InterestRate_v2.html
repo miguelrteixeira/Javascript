@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Interst Rate Page</title>
+		
+		<!-- Html 5 compatibility -->
+		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		
+		<!-- CSS 3 compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"></script>
+		
+		<!-- ECMA 6 compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+		
+		<!-- jQuery 1.x -->
+		<script src="js/jquery-1.12.0.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- Customized CSS and JS -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript">
+			"use strict";
+			
+			var dataShown = "";
+			
+			var $ = function(id) {
+				return document.getElementById(id);
+			}
+	
+			window.onload = function() {
+				$("interestRate_result").onclick = calculateInterestRate;
+				$("interestRate_detailed").onclick = seeInterestRateDetailed;
+				$("interestRate_clear").onclick = clearData;
+				$("investment").focus();
+			}
+			
+			function calculateInterestRate() {
+				var futureValue;
+				var investment = $("investment").value;
+				var interestRate = $("interestRate").value;
+				var years = $("years").value;
+				var isValid = true;
+				
+				/* Validate Data */
+				isValid = validateData(investment, "investment_error");
+				isValid = validateData(interestRate, "interestRate_error");
+				isValid = validateData(years, "years_error");
+				
+				/* Calculate Interest Rate */
+				if (isValid) {
+					futureValue = parseFloat(investment);
+					interestRate = parseFloat(interestRate / 100);
+					for(var i=1; i <= years; i++) {
+						futureValue += futureValue * interestRate;
+						dataShown += "Year: " + i + ", Future Value: " + futureValue.toFixed(2) + ".\n" 
+					}
+					$("futureValue").value = futureValue.toFixed(2);
+					$("interestRate_detailed").style.visibility  = "visible";
+				} else {
+					$("futureValue").value = "";
+					$("interestRate_detailed").style.visibility  = "hidden";
+				}
+			}
+			
+			function seeInterestRateDetailed() {
+				alert(dataShown);
+			}
+			
+			function validateData(input, span) {
+				if(input === "") {
+					$(span).firstChild.nodeValue = "Required!";
+					return false;
+				} else if(isNaN(input)) {
+					$(span).firstChild.nodeValue = "Please insert a numeric value!";
+					return false;
+				} else if (input < 0) {
+					$(span).firstChild.nodeValue = "Please insert a value greather than 0!";
+					return false;
+				} else {
+					$(span).firstChild.nodeValue = "*";
+					return true;
+				}
+			}
+			
+			function clearData() {
+				$("investment").value = "";
+				$("investment_error").firstChild.nodeValue = "*";
+				$("interestRate").value = "";
+				$("interestRate_error").firstChild.nodeValue = "*";
+				$("years").value = "";
+				$("years_error").firstChild.nodeValue = "*";
+				$("futureValue").value = "";
+				$("interestRate_detailed").style.visibility  = "hidden";
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Interest Rate Application</h1>
+			<h2>This page allows you to calculate interest rates!</h2>
+		</header>
+		<menu>
+			<li>
+				<a href="*">IMC Page</a>
+			</li>
+			<li>
+				<a href="*">L/Km Page</a>
+			</li>
+			<li>
+				<a href="*">Interest Rate Page</a>
+			</li>
+			<li>
+				<a href="*">In Construction</a>
+			</li>
+			<li>
+				<a href="*">In Construction</a>
+			</li>			
+		</menu>
+		<section>
+			<form id="interestRate_form" name="interestRate_form" action="*" method="get">
+	            <label for="investment">Total Investment (Eur):</label>
+                <input type="text" id="investment" name="investment">
+                <span id="investment_error">*</span><br>
+
+    	        <label for="interestRate">Annual Interest Rate (%):</label>
+                <input type="text" id="interestRate" name="interestRate">
+                <span id="interestRate_error">*</span><br>
+				
+				<label for="years">Years:</label>
+                <input type="text" id="years" name="years">
+                <span id="years_error">*</span><br>
+				
+        	    <label>&nbsp;</label>
+            	<input type="button" id="interestRate_result" value="Calculate"><br>
+            	<!-- <label>&nbsp;</label>
+            	<input type="button" id="interestRate_detailed" value="Detailed"><br> -->
+            	<label>&nbsp;</label>
+            	<input type="button" id="interestRate_clear" value="Clear Data"><br><br>
+            	
+            	<label for="futureValue">Future value (Eur):</label>
+                <input type="text" id="futureValue" name="futureValue" disabled>
+                <input type="button" id="interestRate_detailed" class="details" value="Details"><br>
+                
+        	</form>
+		</section>
+		<footer>
+			<p>&copy;
+				<script type="text/javascript">
+					document.write(new Date().getFullYear());
+				</script>
+				, <i>Developed by: <b>Miguel R. Teixeira</b></i>
+			</p>
+		</footer>
+	</body>
+</html>

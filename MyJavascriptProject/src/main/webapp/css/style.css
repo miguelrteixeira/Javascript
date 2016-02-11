@@ -57,12 +57,16 @@ section h2 {
 	font-size: 130%;
 }
 section label {
-	width: 15%;
+	width: 20%;
 	text-align: right;
 	padding: 0 .25em .1em 0;
 }
 section input{
 	width: 15%;
+}
+section input.details{
+	width: 6%;
+	visibility: hidden;
 }
 section span {
 	color: red;
