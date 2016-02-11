@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>BMI Page</title>
+		
+		<!-- Html 5 compatibility -->
+		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		
+		<!-- CSS 3 compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"></script>
+		
+		<!-- ECMA 6 compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+		
+		<!-- jQuery 1.x -->
+		<script src="js/jquery-1.12.0.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- Customized CSS and JS -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript">
+			"use strict";
+			var $ = function(id) {
+				return document.getElementById(id);
+			}
+	
+			var calculateLKm = function() {
+				var litrosKm;
+				var litros = $("litros").value;
+				var km = $("km").value;
+				var isValid = true;
+				
+				if(litros === "") {
+					$("litros_error").firstChild.nodeValue = "Required!";
+					isValid = false;
+				} else if(isNaN(litros)) {
+					$("litros_error").firstChild.nodeValue = "Please insert a numeric value!";
+					isValid = false;
+				} else if (litros < 0) {
+					$("litros_error").firstChild.nodeValue = "Please insert a value greather than 0!";
+					isValid = false;
+				} else {
+					$("litros_error").firstChild.nodeValue = "*";
+				}
+				
+				if(km === "") {
+					$("km_error").firstChild.nodeValue = "Required!";
+					isValid = false;
+				} else if(isNaN(km)) {
+					$("km_error").firstChild.nodeValue = "Please insert a numeric value!";
+					isValid = false;
+				} else if (km < 0) {
+					$("km_error").firstChild.nodeValue = "Please insert a value greather than 0!";
+					isValid = false;
+				} else {
+					$("km_error").firstChild.nodeValue = "*";
+				}
+				
+				if (isValid) {
+					litrosKm = litros / km;
+					$("litrosKm").value = litrosKm.toFixed(2);
+				} else {
+					$("litrosKm").value = "";
+				}
+			}
+	
+			window.onload = function() {
+				$("litrosKm_result").onclick = calculateLKm;
+				$("litros").focus();
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>L/Km Application</h1>
+			<h2>This page allows you to calculate your gas consume!</h2>
+		</header>
+		<menu>
+			<li>
+				<a href="*">IMC Page</a>
+			</li>
+			<li>
+				<a href="*">L/Km Page</a>
+			</li>
+			<li>
+				<a href="*">In Construction</a>
+			</li>
+			<li>
+				<a href="*">In Construction</a>
+			</li>			
+		</menu>
+		<section>
+			<form id="litrosKm_form" name="litrosKm_form" action="*" method="get">
+	            <label for="litros">Litros (L):</label>
+                <input type="text" id="litros" name="litros">
+                <span id="litros_error">*</span><br>
+
+    	        <label for="km">Kilómetros (Km):</label>
+                <input type="text" id="km" name="km">
+                <span id="km_error">*</span><br>
+
+        	    <label>&nbsp;</label>
+            	<input type="button" id="litrosKm_result" value="Calculate L/Km"><br><br>
+            	
+            	<label for="litrosKm">L/Km:</label>
+                <input type="text" id="litrosKm" name="litrosKm" disabled>
+                <br>
+                
+        	</form>
+		</section>
+		<footer>
+			<p>&copy;
+				<script type="text/javascript">
+					document.write(new Date().getFullYear());
+				</script>
+				, <i>Developed by: <b>Miguel R. Teixeira</b></i>
+			</p>
+		</footer>
+	</body>
+</html>

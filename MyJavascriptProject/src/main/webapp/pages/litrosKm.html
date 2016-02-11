@@ -25,13 +25,12 @@
 			if(!isNaN(litros) && !isNaN(km)) {
 				document.writeln("<pre>Litros consumidos: " + litros);
 				document.writeln("Km's percorridos: " + km + "<br>");
-				document.writeln("Você gastou " + litrosPorKm + " litros por km.<br>");
+				document.writeln("Você gastou " + litrosPorKm.toFixed(2) + " litros por km.<br>");
 				document.writeln("<h1>Obrigado por usar a app Litros/Km!</h1></pre>")
 			} else {
 				document.writeln("<pre>Por favor insira apenas valores numéricos!");
 				document.writeln("<h1>Obrigado por usar a app Litros/Km!</h1></pre>")
-			}
-			
+			}			
 		</script>
 	</body>
 </html>
