@@ -9,17 +9,17 @@ var toggle = function() {
     var div = h2.nextElementSibling;  // h2 tag's sibling div tag
 
     // toggle plus and minus image in h2 elements by adding or removing a class
-    if (h2.hasAttribute("class")) { 
-        h2.removeAttribute("class");	
+    if (h2.className) { 
+        h2.className = "";
     } else { 
-        h2.setAttribute("class", "minus"); 
+        h2.className = "minus"; 
     }
 
     // toggle div visibility by adding or removing a class
-    if (div.hasAttribute("class")) { 
-        div.removeAttribute("class");
+    if (div.className) { 
+    	div.className = "";
     } else { 
-        div.setAttribute("class", "open"); 
+    	div.className = "open"; 
     } 
 };
 
