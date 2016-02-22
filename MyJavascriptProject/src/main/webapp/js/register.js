@@ -10,7 +10,7 @@ var processEntries = function() {
     var msg = "Please review your entries and complete all required fields";
     var contact = "Text";
     
-    var email = $("email").value;
+    var email = $("emailAddress").value;
     var phone = $("phone").value;
     var country = $("country").value;
     /*var countryText = $("country>option:selected").innerHtml;*/
