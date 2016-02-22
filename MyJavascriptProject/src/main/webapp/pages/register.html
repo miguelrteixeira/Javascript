@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Registration Page</title>
+		
+		<!-- Html 5 compatibility -->
+		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		
+		<!-- CSS 3 compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"></script>
+		
+		<!-- ECMA 6 compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+		
+		<!-- jQuery 1.x -->
+		<script src="js/jquery-1.12.0.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- Customized CSS and JS -->
+		<link rel="stylesheet" type="text/css" href="css/register.css">
+		<script src="js/register.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Registration Application</h1>
+			<h2>This page allows you to register for an account!</h2>
+		</header>
+		<menu>
+			<li>
+				<a href="#">IMC Page</a>
+			</li>
+			<li>
+				<a href="#">L/Km Page</a>
+			</li>
+			<li>
+				<a href="#">Interest Rate Page</a>
+			</li>
+			<li>
+				<a href="#">FAQ's Page</a>
+			</li>
+			<li>
+				<a href="#">Registration Page</a>
+			</li>
+			<li>
+				<a href="#">In Construction</a>
+			</li>			
+		</menu>
+		<section id="register">
+	        <h1>Register for an Account</h1>
+		    <form id="registerForm" name="registerForm" action="#" method="get">
+		    
+		        <label for="email">E-Mail:</label>
+	            <input type="text" name="email" id="email" maxlength="20">
+	            <br>
+	            
+		        <label for="phone">Mobile Phone:</label>
+	            <input type="text" name="phone" id="phone" maxlength="15">
+	            <br>
+	            
+		        <label for="country">Country:</label>
+	            <select name="country" id="country">
+	            	<option value="">Select an option</option>
+	                <option value="Fr">France</option>
+	                <option value="De">Germany</option>
+	                <option value="Pt">Portugal</option>
+	                <option value="Es">Spain</option>
+	            </select>
+	            <br>
+		        
+		        <label>Contact me by:</label>         
+		            <input type="radio" name="contact" id="text" value="text" checked>Text
+		            <input type="radio" name="contact" id="email" value="email">Email
+		            <input type="radio" name="contact" id="mobile" value="email">Mobile Phone
+		            <input type="radio" name="contact" id="none" value="none">Don't contact me
+		        <br>
+		        
+		        <label>Comments:</label>
+		        <textarea name="comments" id="comments" rows="5" cols="30" maxlength="50" ></textarea>
+		        <br>
+		        
+		        <label>Terms of Service:</label>
+		            <input type="checkbox" name="terms" id="terms" value="yes">I accept
+		            <br>
+				<label>&nbsp;</label>
+		        <input type="button" id="registerSubmit" value="Register"><br>
+		        <label>&nbsp;</label>
+		        <input type="button" id="resetForm" value="Reset">
+		    </form>
+		    <h2 id="registerHeader">&nbsp;</h2>
+		    <table id="registerInfo"></table>
+		</section>
+		<footer>
+			<p>&copy;
+				<script type="text/javascript">
+					document.write(new Date().getFullYear());
+				</script>
+				, <i>Developed by: <b>Miguel R. Teixeira</b></i>
+			</p>
+		</footer>
+	</body>
+</html>
