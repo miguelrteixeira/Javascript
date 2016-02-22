@@ -20,7 +20,8 @@ var processEntries = function() {
     if ($("mobile").checked) { contact = "Mobile Phone"; }
     if ($("none").checked) { contact = "None"; }
     var terms = $("terms").checked;
-
+    
+    console.log("Validation: Beginning.");
     if (email == "") {
         email = required;          
         header = msg;
@@ -37,6 +38,9 @@ var processEntries = function() {
         terms = required;
         header = msg;
     }
+    console.log("Validation: Ending.");
+    
+    console.log("Writing Info: Beginning.");
     $("registerHeader").firstChild.nodeValue = header;
     if (header == msg) {     
         html = html + "<tr><td class='labelTd'>Email:</td><td class='valueTd'>" + email + "</td></tr>";
@@ -52,13 +56,17 @@ var processEntries = function() {
         $("registerInfo").innerHTML = "";
         $("registerForm").submit();
     }
+    console.log("Writing Info: Ending.");
+    
 };
 
 var resetForm = function() {
-    $("registerForm").reset();
+    console.log("Reset Form: Beginning.");
+	$("registerForm").reset();
     $("registerHeader").firstChild.nodeValue = "";
     $("registerInfo").innerHTML = "";
     $("email").focus();
+    console.log("Reset Form: Ending.");
 };
 
 window.onload = function() {
