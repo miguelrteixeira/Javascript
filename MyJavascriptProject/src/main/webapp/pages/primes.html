@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="ISO-8859-1">
+			<title>Prime Numbers Count Page</title>
+			
+			<!-- Html 5 compatibility -->
+			<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			
+			<!-- CSS 3 compatibility -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"></script>
+			
+			<!-- ECMA 6 compatibility -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+			
+			<!-- jQuery 1.x -->
+			<script src="js/jquery-1.12.0.min.js"></script>
+			
+			<!-- Bootstrap -->
+			<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+			<script src="js/bootstrap.min.js"></script>
+			
+			<!-- Customized CSS and JS -->
+			<link rel="stylesheet" type="text/css" href="css/style.css">
+			<script src="js/primes.js"></script>
+	</head>
+	
+	<body>
+		<header>
+			<h1>Find Prime Numbers Application</h1>
+			<h2>This page allows you to calculate the amount of prime numbers until the value you provide!</h2>
+		</header>
+		<menu>
+			<li>
+				<a href="#">IMC Page</a>
+			</li>
+			<li>
+				<a href="#">L/Km Page</a>
+			</li>
+			<li>
+				<a href="#">Interest Rate Page</a>
+			</li>
+			<li>
+				<a href="#">FAQ's Page</a>
+			</li>
+			<li>
+				<a href="#">Registration Page</a>
+			</li>
+			<li>
+				<a href="#">Find Prime Numbers Page</a>
+			</li>			
+		</menu>
+		<section>
+		    <h1>Find Prime Numbers</h1>
+		    <p>Enter any a number to find out how many prime numbers there are <br>
+		    up to and including that value.</p>
+		    
+		    <label for="number">Enter Number:</label>
+		    <input type="text" id="number" value="100"><br>
+		    
+		    <label for="count">Prime count:</label>
+		    <input id="count" disabled></input><br>
+		    
+		    <label for="primes">Prime numbers:</label>
+		    <textarea id="primes" disabled></textarea><br>
+		    
+		    <label>&nbsp;</label>
+		    <input  type="button" id="calculate" value="Calculate"><br>
+		</section>
+		<footer>
+			<p>&copy;
+				<script type="text/javascript">
+					document.write(new Date().getFullYear());
+				</script>
+				, <i>Developed by: <b>Miguel R. Teixeira</b></i>
+			</p>
+		</footer>
+	</body>
+</html>
