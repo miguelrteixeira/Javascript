@@ -80,6 +80,9 @@ section textarea {
 	height: 5em;
 	vertical-align: text-top;
 }
+section .vAlignTop {
+	vertical-align: top;
+}
 
 footer {
 	clear: both;
