@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Task Manager Page</title>
+		
+		<!-- Html 5 compatibility -->
+		<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		
+		<!-- CSS 3 compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"></script>
+		
+		<!-- ECMA 6 compatibility -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-shim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.34.2/es6-sham.min.js"></script>
+		
+		<!-- jQuery 1.x -->
+		<script src="js/jquery-1.12.0.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- Customized CSS and JS -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/taskList.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Task Manager</h1>
+			<h2>This page allows you to manage your tasks!</h2>
+		</header>
+		<menu>
+			<li>
+				<a href="#">IMC Page</a>
+			</li>
+			<li>
+				<a href="#">L/Km Page</a>
+			</li>
+			<li>
+				<a href="#">Interest Rate Page</a>
+			</li>
+			<li>
+				<a href="#">Task Manager Page</a>
+			</li>
+			<li>
+				<a href="#">In Construction</a>
+			</li>			
+		</menu>
+		<section>  
+		    <h1>Task Manager</h1>
+		    
+		    <label for="task">Task</label>
+		    <input type="text" name="task" id="task" size="30"><br><br>
+		    
+		    <label>&nbsp;</label>
+		    <input type="button" name="add_task" id="add_task" value="Add Task">
+		    <input type="button" name="clear_tasks" id="clear_tasks" value="Clear Tasks">
+		    <input type="button" name="delete_task" id="delete_task" value="Delete Task"><br>
+		    
+		    <label>&nbsp;</label>
+		    <input type="button" name="toggle_sort" id="toggle_sort" value="Toggle Sort">
+		    <input type="button" name="filter_tasks" id="filter_tasks" value="Filter Tasks">
+		    <input type="button" name="set_name" id="set_name" value="Set Name"><br><br>
+		    
+		    <label class="vAlignTop" for="tasks">Tasks</label>
+		    <textarea id="task_list" rows="6" cols="50" disabled></textarea><br><br>
+		     
+		</section>
+		<footer>
+			<p>&copy;
+				<script type="text/javascript">
+					document.write(new Date().getFullYear());
+				</script>
+				, <i>Developed by: <b>Miguel R. Teixeira</b></i>
+			</p>
+		</footer>
+	</body>
+</html>

@@ -17,9 +17,11 @@ header {
 }
 header h1 {
 	padding: .25em 0 0 .15em;
+	color: #800000;
 }
 header h2 {
 	padding: .15em 0 0 .15em;
+	color: #800000;
 }
 
 menu {
@@ -31,7 +33,9 @@ menu {
 	margin-top: .25em;
 	padding: 1em 0 0.25em 1em;
 }
-
+menu li {
+	margin-top: 1em;
+}
 menu a {
 	color: #800000;
 	font-weight: bold;
@@ -64,6 +68,9 @@ section label {
 section input{
 	width: 15%;
 }
+section input#task{
+	width: 45%;
+}
 section input.details{
 	width: 6%;
 	visibility: hidden;
@@ -73,6 +80,10 @@ section span {
 	width: 5%;
 	font-size: small;
 }
+section .vAlignTop {
+	vertical-align: top;
+}
+
 footer {
 	clear: both;
 	border: 2px solid #800000;
